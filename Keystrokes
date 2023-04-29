@@ -1,4 +1,5 @@
 local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.ResetOnSpawn = false
 local W = Instance.new("TextButton")
 local D = Instance.new("TextButton")
 local S = Instance.new("TextButton")
