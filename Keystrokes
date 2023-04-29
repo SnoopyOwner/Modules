@@ -76,12 +76,12 @@ Space.BorderColor3 = Color3.fromRGB(170, 85, 255)
 Space.Position = UDim2.new(0.0200125165, 0, 0.918645382, 0)
 Space.Size = UDim2.new(0, 176, 0, 31)
 Space.Font = Enum.Font.Unknown
-Space.Text = "--------"
+Space.Text = "________"
 Space.TextColor3 = Color3.fromRGB(255, 255, 255)
 Space.TextSize = 30.000
 
 UICorner_5.CornerRadius = UDim.new(0, 16)
-UICorner_5.Parent = Space
+
 
 
 local UserInputService = game:GetService("UserInputService")
