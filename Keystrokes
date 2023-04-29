@@ -1,14 +1,9 @@
 local ScreenGui = Instance.new("ScreenGui")
 local W = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
 local D = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
 local S = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
 local A = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
 local Space = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
 
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
