@@ -1,80 +1,128 @@
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.ResetOnSpawn = false
-local W = Instance.new("TextButton")
-local D = Instance.new("TextButton")
-local S = Instance.new("TextButton")
-local A = Instance.new("TextButton")
-local Space = Instance.new("TextButton")
+local keystroke = Instance.new("Frame")
+local AKey = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ALabel = Instance.new("TextLabel")
+local SKey = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local SLabel = Instance.new("TextLabel")
+local DKey = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local DLabel = Instance.new("TextLabel")
+local WKey = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local WLabel = Instance.new("TextLabel")
+local SpaceBar = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local SpaceBarLabel = Instance.new("TextLabel")
 
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("CoreGui")
 
+keystroke.Name = "keystroke"
+keystroke.Parent = game.StarterGui.ScreenGui
+keystroke.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+keystroke.BackgroundTransparency = 1.000
+keystroke.Position = UDim2.new(-0.00722312089, 0, 0.690598845, 0)
+keystroke.Size = UDim2.new(0, 285, 0, 287)
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AKey.Name = "AKey"
+AKey.Parent = keystroke
+AKey.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+AKey.BackgroundTransparency = 0.450
+AKey.Position = UDim2.new(0.0454545468, 0, 0.536585391, 0)
+AKey.Size = UDim2.new(0, 49, 0, 49)
 
-W.Name = "W"
-W.Parent = ScreenGui
-W.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-W.BorderColor3 = Color3.fromRGB(170, 170, 255)
-W.BorderSizePixel = 8
-W.Position = UDim2.new(0.0512820482, 0, 0.779301703, 0)
-W.Size = UDim2.new(0, 58, 0, 50)
-W.Font = Enum.Font.Unknown
-W.Text = "W"
-W.TextColor3 = Color3.fromRGB(170, 170, 255)
-W.TextSize = 14.000
-W.TextStrokeColor3 = Color3.fromRGB(0, 170, 255)
+UICorner.Parent = AKey
 
-D.Name = "D"
-D.Parent = ScreenGui
-D.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-D.BorderColor3 = Color3.fromRGB(170, 170, 255)
-D.BorderSizePixel = 8
-D.Position = UDim2.new(0.0919324607, 0, 0.851620913, 0)
-D.Size = UDim2.new(0, 58, 0, 50)
-D.Font = Enum.Font.Unknown
-D.Text = "D"
-D.TextColor3 = Color3.fromRGB(170, 170, 255)
-D.TextSize = 14.000
-D.TextStrokeColor3 = Color3.fromRGB(0, 170, 255)
+ALabel.Name = "ALabel"
+ALabel.Parent = AKey
+ALabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ALabel.BackgroundTransparency = 1.000
+ALabel.Position = UDim2.new(-0.142857075, 0, 0, 0)
+ALabel.Size = UDim2.new(0, 62, 0, 50)
+ALabel.Font = Enum.Font.FredokaOne
+ALabel.Text = "A"
+ALabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ALabel.TextSize = 32.000
 
-S.Name = "S"
-S.Parent = ScreenGui
-S.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-S.BorderColor3 = Color3.fromRGB(170, 170, 255)
-S.BorderSizePixel = 8
-S.Position = UDim2.new(0.0506566614, 0, 0.851620913, 0)
-S.Size = UDim2.new(0, 58, 0, 50)
-S.Font = Enum.Font.Unknown
-S.Text = "S"
-S.TextColor3 = Color3.fromRGB(170, 170, 255)
-S.TextSize = 14.000
-S.TextStrokeColor3 = Color3.fromRGB(0, 170, 255)
+SKey.Name = "SKey"
+SKey.Parent = keystroke
+SKey.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+SKey.BackgroundTransparency = 0.450
+SKey.Position = UDim2.new(0.238436997, 0, 0.536585391, 0)
+SKey.Size = UDim2.new(0, 49, 0, 49)
 
-A.Name = "A"
-A.Parent = ScreenGui
-A.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-A.BorderColor3 = Color3.fromRGB(170, 170, 255)
-A.BorderSizePixel = 8
-A.Position = UDim2.new(0.00938086584, 0, 0.851620913, 0)
-A.Size = UDim2.new(0, 58, 0, 50)
-A.Font = Enum.Font.Unknown
-A.Text = "A"
-A.TextColor3 = Color3.fromRGB(170, 170, 255)
-A.TextSize = 14.000
-A.TextStrokeColor3 = Color3.fromRGB(0, 170, 255)
+UICorner_2.Parent = SKey
 
-Space.Name = "Space"
-Space.Parent = ScreenGui
-Space.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Space.BorderColor3 = Color3.fromRGB(170, 170, 255)
-Space.BorderSizePixel = 8
-Space.Position = UDim2.new(0.00938007794, 0, 0.923940122, 0)
-Space.Size = UDim2.new(0, 218, 0, 50)
-Space.Font = Enum.Font.Unknown
-Space.Text = "________"
-Space.TextColor3 = Color3.fromRGB(170, 170, 255)
-Space.TextSize = 14.000
-Space.TextStrokeColor3 = Color3.fromRGB(0, 170, 255)
+SLabel.Name = "SLabel"
+SLabel.Parent = SKey
+SLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SLabel.BackgroundTransparency = 1.000
+SLabel.Position = UDim2.new(-0.122448914, 0, -0.0204081628, 0)
+SLabel.Size = UDim2.new(0, 62, 0, 50)
+SLabel.Font = Enum.Font.FredokaOne
+SLabel.Text = "S"
+SLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+SLabel.TextSize = 32.000
 
+DKey.Name = "DKey"
+DKey.Parent = keystroke
+DKey.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+DKey.BackgroundTransparency = 0.450
+DKey.Position = UDim2.new(0.431419432, 0, 0.540069699, 0)
+DKey.Size = UDim2.new(0, 49, 0, 49)
+
+UICorner_3.Parent = DKey
+
+DLabel.Name = "DLabel"
+DLabel.Parent = DKey
+DLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DLabel.BackgroundTransparency = 1.000
+DLabel.Position = UDim2.new(-0.142857015, 0, 0, 0)
+DLabel.Size = UDim2.new(0, 62, 0, 50)
+DLabel.Font = Enum.Font.FredokaOne
+DLabel.Text = "D"
+DLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+DLabel.TextSize = 32.000
+
+WKey.Name = "WKey"
+WKey.Parent = keystroke
+WKey.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+WKey.BackgroundTransparency = 0.450
+WKey.Position = UDim2.new(0.238436982, 0, 0.347000003, 0)
+WKey.Size = UDim2.new(0, 49, 0, 49)
+
+UICorner_4.Parent = WKey
+
+WLabel.Name = "WLabel"
+WLabel.Parent = WKey
+WLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WLabel.BackgroundTransparency = 1.000
+WLabel.Position = UDim2.new(-0.122448921, 0, -0.00204081833, 0)
+WLabel.Size = UDim2.new(0, 62, 0, 50)
+WLabel.Font = Enum.Font.FredokaOne
+WLabel.Text = "W"
+WLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+WLabel.TextSize = 32.000
+
+SpaceBar.Name = "SpaceBar"
+SpaceBar.Parent = keystroke
+SpaceBar.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+SpaceBar.BackgroundTransparency = 0.450
+SpaceBar.Position = UDim2.new(0.0454544872, 0, 0.742160261, 0)
+SpaceBar.Size = UDim2.new(0, 161, 0, 31)
+
+UICorner_5.Parent = SpaceBar
+
+SpaceBarLabel.Name = "SpaceBarLabel"
+SpaceBarLabel.Parent = SpaceBar
+SpaceBarLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpaceBarLabel.BackgroundTransparency = 1.000
+SpaceBarLabel.Position = UDim2.new(0.304347903, 0, -0.806451619, 0)
+SpaceBarLabel.Size = UDim2.new(0, 62, 0, 50)
+SpaceBarLabel.Font = Enum.Font.FredokaOne
+SpaceBarLabel.Text = "_____"
+SpaceBarLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpaceBarLabel.TextSize = 32.000
 
 local UserInputService = game:GetService("UserInputService")
 
@@ -82,7 +130,7 @@ local UserInputService = game:GetService("UserInputService")
 local wButton = ScreenGui.W
 
 
-local litColor = Color3.fromRGB(220,220,220)
+local litColor = Color3.fromRGB(169, 169, 169)
 
 
 local unlitColor = Color3.fromRGB(255, 255, 255)
@@ -116,7 +164,7 @@ local UserInputService = game:GetService("UserInputService")
 local wButton = ScreenGui.W
 
 
-local litColor = Color3.fromRGB(220,220,220)
+local litColor = Color3.fromRGB(169, 169, 169)
 
 
 local unlitColor = Color3.fromRGB(255, 255, 255)
@@ -150,7 +198,7 @@ local UserInputService = game:GetService("UserInputService")
 local dButton = ScreenGui.D
 
 
-local litColor = Color3.fromRGB(220,220,220)
+local litColor = Color3.fromRGB(169, 169, 169)
 
 
 local unlitColor = Color3.fromRGB(255, 255, 255)
@@ -184,7 +232,7 @@ local UserInputService = game:GetService("UserInputService")
 local aButton = ScreenGui.A
 
 
-local litColor = Color3.fromRGB(220,220,220)
+local litColor = Color3.fromRGB(169, 169, 169)
 
 
 local unlitColor = Color3.fromRGB(255, 255, 255)
@@ -219,7 +267,7 @@ local UserInputService = game:GetService("UserInputService")
 local sButton = ScreenGui.S
 
 
-local litColor = Color3.fromRGB(220,220,220)
+local litColor = Color3.fromRGB(169, 169, 169)
 
 
 local unlitColor = Color3.fromRGB(255, 255, 255)
@@ -254,7 +302,7 @@ local UserInputService = game:GetService("UserInputService")
 local spaceButton = ScreenGui.Space
 
 
-local litColor = Color3.fromRGB(220,220,220)
+local litColor = Color3.fromRGB(169, 169, 169)
 
 
 local unlitColor = Color3.fromRGB(255, 255, 255)
