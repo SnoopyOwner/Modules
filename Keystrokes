@@ -1,3 +1,4 @@
+ScreenGui.ResetOnSpawn = false
 local keystroke = Instance.new("Frame")
 local AKey = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -14,8 +15,6 @@ local WLabel = Instance.new("TextLabel")
 local SpaceBar = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
 local SpaceBarLabel = Instance.new("TextLabel")
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("CoreGui")
 
 keystroke.Name = "keystroke"
 keystroke.Parent = game.StarterGui.ScreenGui
