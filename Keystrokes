@@ -1,4 +1,3 @@
-ScreenGui.ResetOnSpawn = false
 local keystroke = Instance.new("Frame")
 local AKey = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
