@@ -1,3 +1,11 @@
+if game:GetService("CoreGui"):FindFirstChild("KEYS") then
+    game:GetService("CoreGui"):FindFirstChild("KEYS"):Destroy()
+end
+wait(1)
+print("lol")
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent =  game:GetService("CoreGui")
+ScreenGui.Name = 'KEYS'
 local keystroke = Instance.new("Frame")
 local AKey = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -16,7 +24,7 @@ local UICorner_5 = Instance.new("UICorner")
 local SpaceBarLabel = Instance.new("TextLabel")
 
 keystroke.Name = "keystroke"
-keystroke.Parent = game.StarterGui.ScreenGui
+keystroke.Parent = ScreenGui
 keystroke.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 keystroke.BackgroundTransparency = 1.000
 keystroke.Position = UDim2.new(-0.00722312089, 0, 0.690598845, 0)
@@ -124,22 +132,30 @@ SpaceBarLabel.TextSize = 32.000
 
 local UserInputService = game:GetService("UserInputService")
 
+getgenv().keys = {
+    ['Space'] = false;
+    ['W'] = false;
+    ['A'] = false;
+    ['S'] = false;
+    ['D'] = false;
+}
 
-local wButton = ScreenGui.W
+local wButton = WKey
 
 
-local litColor = Color3.fromRGB(169, 169, 169)
+local litColor = Color3.fromRGB(220, 208, 255)
 
 
-local unlitColor = Color3.fromRGB(255, 255, 255)
+local unlitColor = Color3.fromRGB(34, 34, 34)
 
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.W then
-            
-            wButton.BackgroundColor3 = litColor
+            if wButton.BackgroundColor3 ~= litColor then
+                wButton.BackgroundColor3 = litColor
+            end
         end
     end
 end)
@@ -149,65 +165,26 @@ UserInputService.InputEnded:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.W then
-            
-            wButton.BackgroundColor3 = unlitColor
+            if wButton.BackgroundColor3 ~= unlitColor then
+
+                wButton.BackgroundColor3 = unlitColor
+            end
         end
     end
 end)
 
 
-local UserInputService = game:GetService("UserInputService")
 
-
-local wButton = ScreenGui.W
-
-
-local litColor = Color3.fromRGB(169, 169, 169)
-
-
-local unlitColor = Color3.fromRGB(255, 255, 255)
-
-
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if not gameProcessed then
-        
-        if input.KeyCode == Enum.KeyCode.W then
-            
-            wButton.BackgroundColor3 = litColor
-        end
-    end
-end)
-
-
-UserInputService.InputEnded:Connect(function(input, gameProcessed)
-    if not gameProcessed then
-        
-        if input.KeyCode == Enum.KeyCode.D then
-            
-            dButton.BackgroundColor3 = unlitColor
-        end
-    end
-end)
-
-
-local UserInputService = game:GetService("UserInputService")
-
-
-local dButton = ScreenGui.D
-
-
-local litColor = Color3.fromRGB(169, 169, 169)
-
-
-local unlitColor = Color3.fromRGB(255, 255, 255)
+local dButton = DKey
 
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.D then
-            
+            if dButton.BackgroundColor3 ~= litColor then
             dButton.BackgroundColor3 = litColor
+            end
         end
     end
 end)
@@ -217,31 +194,24 @@ UserInputService.InputEnded:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.D then
-            
+            if dButton.BackgroundColor3 ~= unlitColor then
             dButton.BackgroundColor3 = unlitColor
+            end
         end
     end
 end)
 
 
-local UserInputService = game:GetService("UserInputService")
-
-
-local aButton = ScreenGui.A
-
-
-local litColor = Color3.fromRGB(169, 169, 169)
-
-
-local unlitColor = Color3.fromRGB(255, 255, 255)
+local aButton = AKey
 
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.A then
-            
+            if aButton.BackgroundColor3 ~= litColor then
             aButton.BackgroundColor3 = litColor
+            end
         end
     end
 end)
@@ -251,32 +221,26 @@ UserInputService.InputEnded:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.A then
-            
+            if aButton.BackgroundColor3 ~= unlitColor then
             aButton.BackgroundColor3 = unlitColor
+            end
         end
     end
 end)
 
 
 
-local UserInputService = game:GetService("UserInputService")
+local sButton = SKey
 
-
-local sButton = ScreenGui.S
-
-
-local litColor = Color3.fromRGB(169, 169, 169)
-
-
-local unlitColor = Color3.fromRGB(255, 255, 255)
 
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.S then
-            
-            sButton.BackgroundColor3 = litColor
+            if sButton.BackgroundColor3 ~= litColor then
+                sButton.BackgroundColor3 = litColor
+            end
         end
     end
 end)
@@ -286,32 +250,23 @@ UserInputService.InputEnded:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.S then
-            
+        if sButton.BackgroundColor3 ~= unlitColor then    
             sButton.BackgroundColor3 = unlitColor
         end
+        end
     end
 end)
 
 
-
-local UserInputService = game:GetService("UserInputService")
-
-
-local spaceButton = ScreenGui.Space
-
-
-local litColor = Color3.fromRGB(169, 169, 169)
-
-
-local unlitColor = Color3.fromRGB(255, 255, 255)
-
+local spaceButton = SpaceBar
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.Space then
-            
+        if spaceButton.BackgroundColor ~= litColor then
             spaceButton.BackgroundColor3 = litColor
+        end
         end
     end
 end)
@@ -321,8 +276,9 @@ UserInputService.InputEnded:Connect(function(input, gameProcessed)
     if not gameProcessed then
         
         if input.KeyCode == Enum.KeyCode.Space then
-            
+        if spaceButton.BackgroundColor ~= unlitColor then
             spaceButton.BackgroundColor3 = unlitColor
+        end
         end
     end
 end)
