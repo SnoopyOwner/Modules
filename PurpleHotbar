@@ -1,4 +1,5 @@
 local players = game:GetService("Players");
+local lplrGui.ResetOnSpawn = false
 local lplr = players.LocalPlayer;
 local lplrGui = lplr.PlayerGui;
 
