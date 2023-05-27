@@ -4,33 +4,33 @@ local lplrGui = lplr.PlayerGui;
 
 local rs = game:GetService("RunService");
 
-hotbar = lplrGui:FindFirstChild('hotbar');
-hotbarContainer = hotbar['1']['4']
-
 function ChangeHotbar()
-    for index, frame in pairs(hotbarContainer:GetChildren()) do
+    for index, frame in pairs(lplrGui:FindFirstChild('hotbar')['1']['4']:GetChildren()) do
         if frame:IsA("Frame") then
             local object = frame:FindFirstChild("1")
             if object and object:IsA('ImageButton') then
                 
-                if object.BorderColor3 ~= Color3.fromRGB(147, 112, 219) then
-                    object.BorderColor3 = Color3.fromRGB(147, 112, 219);
+                if object.BorderColor3 ~= Color3.fromRGB(112, 77, 219) then
+                    object.BorderColor3 = Color3.fromRGB(112, 77, 219);
                 end
                 if object.BackgroundColor3 ~= Color3.fromRGB(15,15,15) then
                     object.BackgroundColor3 = Color3.fromRGB(15,15,15);
                 end
 
                 local Text = object:FindFirstChild("1");
-                    if Text.BackgroundColor3 ~= Color3.fromRGB(147, 112, 219) then
-                        Text.BackgroundColor3 = Color3.fromRGB(147, 112, 219);
-                    end
+                if Text.BackgroundColor3 ~= Color3.fromRGB(112, 77, 219) then
+                    Text.BackgroundColor3 = Color3.fromRGB(112, 77, 219);
+                end
             end
         end
     end
 end
 
 
-ChangeHotbar()
 local HotbarConnection = nil
 
 HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+
+lplr.CharacterAdded:Connect(function()
+    HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+end)
