@@ -1,11 +1,3 @@
-if not shared.GuiLibrary then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-repeat wait() until shared.GuiLibrary and shared.VapeFullyLoaded
-print('shared!')
-end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/SnoopyOwner/Modules/main/TexturePack'))()
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 local players = game:GetService("Players");
 local lplr = players.LocalPlayer;
 local lplrGui = lplr.PlayerGui;
