@@ -13,8 +13,8 @@ function ChangeHotbar()
                 if object.BorderColor3 ~= Color3.fromRGB(147, 112, 219) then
                     object.BorderColor3 = Color3.fromRGB(147, 112, 219);
                 end
-                if object.BackgroundColor3 ~= Color3.fromRGB(147, 112, 219) then
-                    object.BackgroundColor3 = Color3.fromRGB(147, 112, 219);
+                if object.BackgroundColor3 ~= Color3.fromRGB(137, 207, 240) then
+                    object.BackgroundColor3 = Color3.fromRGB(137, 207, 240);
                 end
 
                 local Text = object:FindFirstChild("1");
