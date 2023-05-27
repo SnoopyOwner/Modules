@@ -10,16 +10,16 @@ function ChangeHotbar()
             local object = frame:FindFirstChild("1")
             if object and object:IsA('ImageButton') then
                 
-                if object.BorderColor3 ~= Color3.fromRGB(112, 77, 219) then
-                    object.BorderColor3 = Color3.fromRGB(112, 77, 219);
+                if object.BorderColor3 ~= Color3.fromRGB(147, 112, 219) then
+                    object.BorderColor3 = Color3.fromRGB(147, 112, 219);
                 end
-                if object.BackgroundColor3 ~= Color3.fromRGB(15,15,15) then
-                    object.BackgroundColor3 = Color3.fromRGB(15,15,15);
+                if object.BackgroundColor3 ~= Color3.fromRGB(147, 112, 219) then
+                    object.BackgroundColor3 = Color3.fromRGB(147, 112, 219);
                 end
 
                 local Text = object:FindFirstChild("1");
-                if Text.BackgroundColor3 ~= Color3.fromRGB(112, 77, 219) then
-                    Text.BackgroundColor3 = Color3.fromRGB(112, 77, 219);
+                if Text.BackgroundColor3 ~= Color3.fromRGB(147, 112, 219) then
+                    Text.BackgroundColor3 = Color3.fromRGB(147, 112, 219);
                 end
             end
         end
