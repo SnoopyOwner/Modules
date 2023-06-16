@@ -150,7 +150,7 @@ function tp1(obj)
     repeat task.wait() until lPlayer.isAlive()
     local tweenS = game:GetService("TweenService")
     local ts = tweenS:Create(lPlayer.Character.HumanoidRootPart, TweenInfo.new(.96,Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-        CFrame = obj.CFrame * CFrame.new(0,3,0)
+        CFrame = obj.CFrame * CFrame.new(0,2,0)
     });
     ts:Play();
     ts.Completed:Wait();
