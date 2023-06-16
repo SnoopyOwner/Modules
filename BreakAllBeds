@@ -1,0 +1,183 @@
+getgenv().lPlayer = {}
+ 
+ 
+lPlayer.LocalPlayer = game:GetService("Players").LocalPlayer
+ 
+
+ 
+
+lPlayer.Name = lPlayer.LocalPlayer.Name
+lPlayer.UserId = lPlayer.LocalPlayer.UserId
+
+lPlayer.CharacterAdded = lPlayer.LocalPlayer.CharacterAdded
+lPlayer.CharacterRemoving = lPlayer.LocalPlayer.CharacterRemoving
+
+lPlayer.Character = lPlayer.LocalPlayer.Character
+spawn(function()
+    lPlayer.CharacterAdded:Connect(function(char)
+        lPlayer.Character = char
+    
+    end)
+end)
+
+
+lPlayer.Team = lPlayer.LocalPlayer.Team
+
+
+lPlayer.TeamColor = lPlayer.LocalPlayer.TeamColor
+spawn(function()
+    while task.wait(.1) do
+        if lPlayer.LocalPlayer.Team then
+            lPlayer.Team = lPlayer.LocalPlayer.Team
+        end
+        if lPlayer.LocalPlayer.TeamColor then
+            lPlayer.TeamColor = lPlayer.LocalPlayer.TeamColor
+        end
+    end
+end)
+lPlayer.Backpack = lPlayer.LocalPlayer.Backpack
+lPlayer.PlayerGui = lPlayer.LocalPlayer.PlayerGui
+lPlayer.PlayerScripts = lPlayer.LocalPlayer.PlayerScripts
+
+--functions
+
+
+
+function lPlayer.isAlive(self)
+    if self ~= nil then
+        self = self;
+    else
+        self = lPlayer
+    end
+    if self.Character then
+        local humanoid = self.Character:FindFirstChildOfClass("Humanoid")
+        if humanoid and humanoid.Health and humanoid.Health > 0 then
+            return true
+        end
+    end
+    return false
+end
+
+
+lPlayer.kill = function(waitUntilRespawn: Boolean)
+    if not waitUntilRespawn then waitUntilRespawn = false end
+    if lPlayer.isAlive() then
+        lPlayer.Character.Humanoid.Health = 0
+        if waitUntilRespawn then
+            repeat
+                task.wait()
+            until lPlayer:isAlive()
+            print("respawned")
+        end
+    end
+end
+
+lPlayer.SetRendering = function(ren: Boolean)
+    game:GetService("RunService"):Set3dRenderingEnabled(ren)
+end
+
+lPlayer.SetRender = function(isRendering: Boolean)
+    lPlayer.SetRendering(isRendering)
+end
+
+lPlayer.click = function(Type)
+    local dir = nil
+    if Type ~= nil then
+        dir = Type
+    else
+        dir = 'left'
+    end
+    if dir == 'left' then
+            mouse1click()
+    elseif dir == 'right' then
+        mouse2click()
+    end
+end
+
+lPlayer.NilChar = function()
+    if lPlayer.isAlive() then
+        lPlayer.kill(false)
+        task.wait(.1)
+        lPlayer.Character:Destroy()
+    end
+end
+
+lPlayer.printFunctions = function()
+    for i,v in pairs(lPlayer) do
+        if type(v) == 'function' and getinfo(v).name then
+            print(getinfo(v).name)
+        end
+    end
+end
+
+
+function GetMagnitude(block1, block2)
+    local pos1 = block1.Position
+    local pos2 = block2.Position
+    return (pos2 - pos1).Magnitude
+end
+
+function HasPick()
+    for i,v in pairs(game:GetService("ReplicatedStorage").Inventories:GetChildren()) do
+        if v.Name == game.Players.LocalPlayer.Name then
+            for x,child in pairs(v:GetChildren()) do
+                if child.Name:find("pickaxe") or child.Name == "wood_pickaxe" then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+if not workspace:FindFirstChild("Map") then return end
+repeat task.wait() until HasPick()
+
+
+
+function beds()
+    local bedAmt = 0;
+    for i,v in pairs(workspace:GetChildren()) do
+        if v.Name == 'bed' and v:FindFirstChild("Covers") then
+            bedsAmt +=1
+        end
+    end;
+    return bedAmt
+end
+
+
+function tp1(obj)
+    repeat task.wait() until lPlayer.isAlive()
+    local tweenS = game:GetService("TweenService")
+    local ts = tweenS:Create(lPlayer.Character.HumanoidRootPart, TweenInfo.new(.96,Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        CFrame = obj.CFrame * CFrame.new(0,3,0)
+    });
+    ts:Play();
+    ts.Completed:Wait();
+    local oldPos = obj.CFrame
+    print(oldPos)
+    local tries = 0
+    UpdatedObj = obj.Parent
+    task.wait(.3)
+    if GetMagnitude(lPlayer.Character.HumanoidRootPart, UpdatedObj) > 10 then
+        lPlayer.kill(false)
+    end
+    UpdatedObj.Changed:wait()
+    lPlayer.Character.Humanoid.Health = 0
+end
+
+local KillOnDeathHook;
+
+KillOnDeathHook = lPlayer.CharacterAdded:Connect(function(char)
+    task.wait()
+    for i,v in pairs(workspace:GetChildren()) do
+        if v.Name == 'bed' and v:FindFirstChild("Covers") and v.Covers.BrickColor ~= lPlayer.TeamColor then
+            tp1(v.Covers)
+        end
+    end
+end)
+
+lPlayer.kill(false)
+
+repeat task.wait() until beds() == 1;
+KillOnDeathHook:Disconnect()
