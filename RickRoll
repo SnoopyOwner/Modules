@@ -21,7 +21,7 @@ end
 local function trollageTextGUIs()
     local textGUIs = getTextGUIs()
     for _, textGUI in ipairs(textGUIs) do
-        textGUI.Text = "trollage"
+        textGUI.Text = "Never Gonna Give You Up"
     end
 end
 
