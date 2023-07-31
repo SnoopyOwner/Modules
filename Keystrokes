@@ -46,7 +46,7 @@
 			ALabel.Size = UDim2.new(0, 62, 0, 50)
 			ALabel.Font = Enum.Font.FredokaOne
 			ALabel.Text = "A"
-			ALabel.TextColor3 = Color3.fromRGB(191, 148, 228)
+			ALabel.TextColor3 = Color3.fromRGB(77, 107, 149)
 			ALabel.TextSize = 32.000
 			
 			SKey.Name = "SKey"
@@ -66,7 +66,7 @@
 			SLabel.Size = UDim2.new(0, 62, 0, 50)
 			SLabel.Font = Enum.Font.FredokaOne
 			SLabel.Text = "S"
-			SLabel.TextColor3 = Color3.fromRGB(191, 148, 228)
+			SLabel.TextColor3 = Color3.fromRGB(77, 107, 149)
 			SLabel.TextSize = 32.000
 			
 			DKey.Name = "DKey"
@@ -86,7 +86,7 @@
 			DLabel.Size = UDim2.new(0, 62, 0, 50)
 			DLabel.Font = Enum.Font.FredokaOne
 			DLabel.Text = "D"
-			DLabel.TextColor3 = Color3.fromRGB(191, 148, 228)
+			DLabel.TextColor3 = Color3.fromRGB(77, 107, 149)
 			DLabel.TextSize = 32.000
 			
 			WKey.Name = "WKey"
@@ -106,7 +106,7 @@
 			WLabel.Size = UDim2.new(0, 62, 0, 50)
 			WLabel.Font = Enum.Font.FredokaOne
 			WLabel.Text = "W"
-			WLabel.TextColor3 = Color3.fromRGB(191, 148, 228)
+			WLabel.TextColor3 = Color3.fromRGB(77, 107, 149)
 			WLabel.TextSize = 32.000
 			
 			SpaceBar.Name = "SpaceBar"
@@ -126,7 +126,7 @@
 			SpaceBarLabel.Size = UDim2.new(0, 62, 0, 50)
 			SpaceBarLabel.Font = Enum.Font.FredokaOne
 			SpaceBarLabel.Text = "_____"
-			SpaceBarLabel.TextColor3 = Color3.fromRGB(191, 148, 228)
+			SpaceBarLabel.TextColor3 = Color3.fromRGB(77, 107, 149)
 			SpaceBarLabel.TextSize = 32.000
 			
 			local UserInputService = game:GetService("UserInputService")
